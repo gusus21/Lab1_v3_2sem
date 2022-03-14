@@ -261,7 +261,7 @@ namespace lab_1_
                     endSum = sum;
                     k = i;
                 }
-                sum = 0;
+                sum = 1;
             }
             return k;
         }
