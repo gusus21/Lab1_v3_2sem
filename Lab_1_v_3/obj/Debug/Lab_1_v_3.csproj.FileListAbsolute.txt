@@ -1,0 +1,7 @@
+D:\проекти VS\Палм 2 сем\Lab_1_v_3\Lab_1_v_3\bin\Debug\Lab_1_v_3.exe.config
+D:\проекти VS\Палм 2 сем\Lab_1_v_3\Lab_1_v_3\bin\Debug\Lab_1_v_3.exe
+D:\проекти VS\Палм 2 сем\Lab_1_v_3\Lab_1_v_3\bin\Debug\Lab_1_v_3.pdb
+D:\проекти VS\Палм 2 сем\Lab_1_v_3\Lab_1_v_3\obj\Debug\Lab_1_v_3.csproj.AssemblyReference.cache
+D:\проекти VS\Палм 2 сем\Lab_1_v_3\Lab_1_v_3\obj\Debug\Lab_1_v_3.csproj.CoreCompileInputs.cache
+D:\проекти VS\Палм 2 сем\Lab_1_v_3\Lab_1_v_3\obj\Debug\Lab_1_v_3.exe
+D:\проекти VS\Палм 2 сем\Lab_1_v_3\Lab_1_v_3\obj\Debug\Lab_1_v_3.pdb

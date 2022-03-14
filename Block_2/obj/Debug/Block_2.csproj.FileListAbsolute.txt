@@ -1,0 +1,7 @@
+D:\проекти VS\Палм 2 сем\Lab_1_v_3\Block_2\bin\Debug\Block_2.exe.config
+D:\проекти VS\Палм 2 сем\Lab_1_v_3\Block_2\bin\Debug\Block_2.exe
+D:\проекти VS\Палм 2 сем\Lab_1_v_3\Block_2\bin\Debug\Block_2.pdb
+D:\проекти VS\Палм 2 сем\Lab_1_v_3\Block_2\obj\Debug\Block_2.csproj.CoreCompileInputs.cache
+D:\проекти VS\Палм 2 сем\Lab_1_v_3\Block_2\obj\Debug\Block_2.exe
+D:\проекти VS\Палм 2 сем\Lab_1_v_3\Block_2\obj\Debug\Block_2.pdb
+D:\проекти VS\Палм 2 сем\Lab_1_v_3\Block_2\obj\Debug\Block_2.csproj.AssemblyReference.cache
