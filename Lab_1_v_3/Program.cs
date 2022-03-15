@@ -111,8 +111,12 @@ namespace lab_1_
                     {
                         MassInput(n, m, array);
                         Console.WriteLine("Вiдсортований масив:");
-                        PrintArray(Sort(m, SumInLaw(0, array), ref array));
-                        PrintArray(Sort(m, SumInLaw(SumInLaw(0, array) + 1, array), ref array));
+                        for (int i = 0; i < array.GetLength(0); i++)
+                        {
+                            Sort(m, SumInLaw(i, array), ref array);
+
+                        }
+                        PrintArray(array);
                         break;
                     }
                 case 2:
@@ -121,7 +125,12 @@ namespace lab_1_
                         Console.WriteLine("Ваш масив:");
                         PrintArray(array);
                         Console.WriteLine("Вiдсортований масив:");
-                        PrintArray(Sort(m, SumInLaw(n, array), ref array));
+                        for (int i = 0; i < array.GetLength(0); i++)
+                        {
+                            Sort(m, SumInLaw(i, array), ref array);
+
+                        }
+                        PrintArray(array);
                         break;
                     }
                 default:
@@ -129,6 +138,7 @@ namespace lab_1_
                         Console.WriteLine("Даний символ не пiдтримується");
                         break;
                     }
+                    
             }
         }
         static void DoBlock4(int n, int m, int[,] array)
@@ -198,7 +208,7 @@ namespace lab_1_
                 }
                 Console.WriteLine();
             }
-            Console.ReadLine();
+            
         }
         //Блок 1
         static void OutputOfColumnNumbers(int[,] array)
@@ -208,7 +218,7 @@ namespace lab_1_
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    if (array[i,j] >= 0)
+                    if (array[i,j] > 0)
                     {
                         Console.Write(j + " ");
                     }
@@ -268,7 +278,6 @@ namespace lab_1_
         static int[,] Sort(int n, int k, ref int[,] array)
         {
             int temp, biggest;
-
             for (int i = 0; i < n - 1; i++)
             {
                 biggest = i;
@@ -327,7 +336,7 @@ namespace lab_1_
                 minEl = int.MaxValue;
                 for (int i = 0; i < array.GetLength(0); i++)
                 {
-                    if (array[i, j] <= minEl)
+                    if (array[i, j] < minEl)
                     {
                         minEl = array[i, j];
                     }
