@@ -7,10 +7,10 @@ namespace lab_1_
      {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введiть к-сть рядкiв:");
-            int n = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Введіть к-сть стопчиків(для другого блоку не використовується):");
-            int m = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введiть к-сть рядкiв та стопчикiв(для другого блоку не використовується) через пропуск:");
+            string[] data = Console.ReadLine().Trim().Split();
+            int n = int.Parse(data[0]);
+            int m = int.Parse(data[1]);
             int[,] array = new int[n, m];
             Console.WriteLine("Оберiть номер блоку, який хочете виконати (вiд 1 до 4) ");
             int choise = int.Parse(Console.ReadLine());
@@ -46,20 +46,24 @@ namespace lab_1_
         }
         static void DoBlock1(int n, int m, int[,] array)
         {
-            Console.WriteLine("Оберiть спосiб введення масиву: 1 - вручну, 2 - випадково");
+            Console.WriteLine("Оберiть спосiб введення масиву: 1 - вручну, 2 - випадково, 3 - вручну, всі числа через пропуск");
             int choise = int.Parse(Console.ReadLine());
             switch (choise)
             {
                 case 1:
                     {
                         MassInput(n, m, array);
-                        
                         break;
                     }
                 case 2:
                     {
                         CreatingRandomArray(n, m, array);
                         PrintArray(array);
+                        break;
+                    }
+                case 3:
+                    {
+                        MassInputSpaces(m, array);
                         break;
                     }
                 default:
@@ -74,7 +78,7 @@ namespace lab_1_
         static void DoBlock2(int n)
         {
             int[,] array = new int[n, n];
-            Console.WriteLine("Оберiть спосiб введення масиву: 1 - вручну, 2 - випадково");
+            Console.WriteLine("Оберiть спосiб введення масиву: 1 - вручну, 2 - випадково, 3 - вручну, всі числа через пропуск");
             int choise = int.Parse(Console.ReadLine());
             switch (choise)
             {
@@ -94,6 +98,14 @@ namespace lab_1_
                         PrintArray(Max(n, array));
                         break;
                     }
+                case 3:
+                    {
+                        MassInputSpaces(n, array);
+                        Console.WriteLine("Новий масив:");
+                        PrintArray(Max(n, array));
+                        Console.ReadLine();
+                        break;
+                    }
                 default:
                     {
                         Console.WriteLine("Даний символ не пiдтримується");
@@ -103,7 +115,7 @@ namespace lab_1_
         }
         static void DoBlock3(int n, int m, int[,] array)
         {
-            Console.WriteLine("Оберiть спосiб введення масиву: 1 - вручну, 2 - випадково");
+            Console.WriteLine("Оберiть спосiб введення масиву: 1 - вручну, 2 - випадково, 3 - вручну, всі числа через пропуск");
             int choise = int.Parse(Console.ReadLine());
             switch (choise)
             {
@@ -124,6 +136,18 @@ namespace lab_1_
                         CreatingRandomArray(n, m, array);
                         Console.WriteLine("Ваш масив:");
                         PrintArray(array);
+                        Console.WriteLine("Вiдсортований масив:");
+                        for (int i = 0; i < array.GetLength(0); i++)
+                        {
+                            Sort(m, SumInLaw(i, array), ref array);
+
+                        }
+                        PrintArray(array);
+                        break;
+                    }
+                case 3:
+                    {
+                        MassInputSpaces(m, array);
                         Console.WriteLine("Вiдсортований масив:");
                         for (int i = 0; i < array.GetLength(0); i++)
                         {
@@ -143,7 +167,7 @@ namespace lab_1_
         }
         static void DoBlock4(int n, int m, int[,] array)
         {
-            Console.WriteLine("Оберiть спосiб введення масиву: 1 - вручну, 2 - випадково");
+            Console.WriteLine("Оберiть спосiб введення масиву: 1 - вручну, 2 - випадково, 3 - вручну, всі числа через пропуск");
             int choise = int.Parse(Console.ReadLine());
             switch (choise)
             {
@@ -160,6 +184,14 @@ namespace lab_1_
                         CreatingRandomArray(n, m, array);
                         Console.WriteLine("Ваш масив:");
                         PrintArray(array);
+                        Console.WriteLine("Вiдсортований масив:");
+                        QuickSort(MinElem(array), ref array, 0, MinElem(array).Length - 1);
+                        PrintArray(array);
+                        break;
+                    }
+                case 3:
+                    {
+                        MassInputSpaces(m, array);
                         Console.WriteLine("Вiдсортований масив:");
                         QuickSort(MinElem(array), ref array, 0, MinElem(array).Length - 1);
                         PrintArray(array);
@@ -193,6 +225,20 @@ namespace lab_1_
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
                     array[i, j] = r.Next(-20, 20);
+                }
+            }
+            return array;
+        }
+        static int[,] MassInputSpaces(int n, int[,] array)
+        {
+            int k = 0;
+            string[] data = Console.ReadLine().Trim().Split();
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    array[i, j] = Convert.ToInt32(data[k]);
+                    k++;
                 }
             }
             return array;
